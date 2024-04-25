@@ -30,7 +30,7 @@ class UnionFind:
 class Solution:
     def distanceLimitedPathsExist(self, n: int, ed: List[List[int]], q: List[List[int]]) -> List[bool]:
         uni = UnionFind(n)
-        ans = ["" for i in range(len(q))]
+        ans = [False for i in range(len(q))]
         for i in range(len(q)):
             q[i].append(i)
         q.sort(key = lambda x: x[2])
@@ -42,8 +42,6 @@ class Solution:
                 j+=1
             if uni.find(i[0]) == uni.find(i[1]):
                 ans[i[3]] = True
-            else:
-                ans[i[3]] = False
         return ans
 
 
