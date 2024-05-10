@@ -36,7 +36,6 @@ class Solution:
         for i in range(len(s)):
             dic[uni.find(i)].append(s[i])
         ans = []
-        print(dic)
         for i in dic:
             dic[i].sort(reverse=True)
         for i in range(len(s)):
