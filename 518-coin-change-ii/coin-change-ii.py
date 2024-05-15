@@ -1,12 +1,15 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        lst = [0 for i in range(amount+1)]
-        lst[0] = 1
-        for c in coins:
-            for am in range(1,amount+1):
-                if c<=am:
-                    lst[am] += lst[am-c]
-        return lst[amount]
+        memo = {}
+        def dp(ind,am):
+            if am == 0:
+                return 1
+            if am<0 or ind>=len(coins):
+                return 0
+            if (ind,am) not in memo:
+                memo[(ind,am)] = dp(ind+1,am)+dp(ind,am-coins[ind])
+            return memo[(ind,am)]
+        return dp(0,amount)
 
 
 
