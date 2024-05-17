@@ -7,5 +7,5 @@ class Solution:
             if i+q[i][1]+1<len(q):
                 take+=dp[i+q[i][1]+1]
             dp[i] = max(take,dp[i+1])
-        return max(dp)
+        return dp[0]
         
