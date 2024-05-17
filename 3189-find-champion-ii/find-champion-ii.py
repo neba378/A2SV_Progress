@@ -5,11 +5,14 @@ class Solution:
             pre[i]=0
         for u,v in edges:
             pre[v]+=1
-            pre[u] = max(pre[u],0)
         ans = []
+        c = 0
         for i,j in pre.items():
             if j == 0:
-                ans.append(i)
-        if len(ans)>1 or len(ans)==0:
+                v = i
+                c+=1
+            if c>1:
+                return -1
+        if c==0:
             return -1
-        return ans[0]
+        return v
