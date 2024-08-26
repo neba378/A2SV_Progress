@@ -10,8 +10,6 @@ class Solution:
     def postorder(self, root: 'Node') -> List[int]:
         lst = []
         def rec(node):
-            if not node:
-                return
             if not node.children:
                 return
             for i in node.children:
