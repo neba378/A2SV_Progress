@@ -17,8 +17,6 @@ class Solution:
                     print("eyes")
                     for i in range(less+quo-6):
                         lst[i]+=1
-                    if 7 in lst:
-                        return []
                     return lst + [6]
 
                 return lst + [less+quo] 
