@@ -10,4 +10,3 @@ class Solution:
             if goalFullBin[i]!=startFullBin[i]:
                 ans+=1
         return ans
-
