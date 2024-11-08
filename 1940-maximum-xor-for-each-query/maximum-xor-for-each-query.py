@@ -6,4 +6,5 @@ class Solution:
         for i in range(len(nums)):
             c ^= nums[i]
             ans.append((2**maximumBit-1)^c)
-        return reversed(ans)
+        ans.reverse()
+        return ans
